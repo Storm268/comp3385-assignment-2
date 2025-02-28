@@ -5,24 +5,17 @@
     <h2>Feedback Form</h2>
     <form action="{{ url('/feedback/send') }}" method="POST">
         @csrf
-        
-        <div>
-            <label for="fullname">Full Name (Required)</label>
-            <input type="text" name="fullname" required>
-        </div>
-
-        <div>
-            <label for="email">Email (Required)</label>
-            <input type="email" name="email" required>
-        </div>
-
-        <div>
-            <label for="comment">Comments (Required)</label>
-            <textarea name="comment" required></textarea>
-        </div>
-
-        <button type="submit">Submit</button>
-    </form>
+        <label for="fullname">Full Name:</label>
+        <input type="text" name="fullname" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+    
+        <label for="comment">Comment:</label>
+        <textarea name="comment" required></textarea>
+    
+        <button type="submit">Send Feedback</button>
+    </form>    
 
     @if ($errors->any())
         <div class="alert alert-danger">
