@@ -9,11 +9,5 @@ class Feedback extends Model
 {
     use HasFactory;
 
-    protected $table = 'feedback';
-
-    protected $fillable = [
-        'fullname',
-        'email',
-        'comment',
-    ];
+    protected $fillable = ['fullname', 'email', 'comment'];
 }

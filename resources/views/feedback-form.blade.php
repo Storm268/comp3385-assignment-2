@@ -1,30 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h2>Feedback Form</h2>
-    <form action="{{ url('/feedback/send') }}" method="POST">
+<div class="container mt-5">
+    <h2 class="mb-4">Feedback Form</h2>
+    <form method="POST" action="/feedback/send">
         @csrf
-        <label for="fullname">Full Name:</label>
-        <input type="text" name="fullname" required>
-    
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-    
-        <label for="comment">Comment:</label>
-        <textarea name="comment" required></textarea>
-    
-        <button type="submit">Send Feedback</button>
-    </form>    
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="mb-3 row">
+            <div class="col-md-6">
+                <label for="fullname" class="form-label">Full Name:</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
         </div>
-    @endif
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comment:</label>
+            <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Feedback</button>
+    </form>
 </div>
 @endsection
