@@ -21,7 +21,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/about') }}">About</a>
                 </li>
-            </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/feedback') }}">Feedback</a>  <!-- Add this line -->
+                </li>
+            </ul>            
         </div>
     </div>
 </nav>
